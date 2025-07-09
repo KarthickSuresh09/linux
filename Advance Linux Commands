@@ -35,3 +35,4 @@ root        5528  0.0  0.2   6944  2176 pts/1    S+   08:48   0:00 grep --color=
 root@ip-172-31-88-178:/home/ubuntu# kill -9 5059
 root@ip-172-31-88-178:/home/ubuntu# ps -aux | grep -i nginx
 root        5572  0.0  0.2   6944  2176 pts/1    S+   08:50   0:00 grep --color=auto -i nginx
+
