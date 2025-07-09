@@ -1,0 +1,37 @@
+it will show the all the process of linux 
+ps -ef
+
+root           1       0  0 06:55 ?        00:00:06 /sbin/init
+root           2       0  0 06:55 ?        00:00:00 [kthreadd]
+root           3       2  0 06:55 ?        00:00:00 [pool_workqueue_release]
+
+it will show the more detail of all the process of linux it is like task manager
+ps -aux
+root           1  0.0  1.3  22528 13680 ?        Ss   06:55   0:06 /sbin/init
+root           2  0.0  0.0      0     0 ?        S    06:55   0:00 [kthreadd]
+root           3  0.0  0.0      0     0 ?        S    06:55   0:00 [pool_workqueue_release]
+
+
+it is an filter process 
+ps -aux | grep -i nginx
+root        4970  0.0  0.7  11468  7808 ?        Ss   08:27   0:00 nginx: master process nginx -g daemon off;
+message+    5019  0.0  0.3  11932  3196 ?        S    08:27   0:00 nginx: worker process
+root        5059  0.0  0.7  11468  7424 ?        Ss   08:27   0:00 nginx: master process nginx -g daemon off;
+message+    5103  0.0  0.3  11932  3052 ?        S    08:27   0:00 nginx: worker process
+root        5489  0.0  0.2   6944  2176 pts/1    S+   08:45   0:00 grep --color=auto -i nginx
+
+It is an kill command to the process
+kill 4970
+
+It is an force kill
+kill -9 5059
+
+* eg:
+root@ip-172-31-88-178:/home/ubuntu# kill 4970
+root@ip-172-31-88-178:/home/ubuntu# ps -aux | grep -i nginx
+root        5059  0.0  0.7  11468  7424 ?        Ss   08:27   0:00 nginx: master process nginx -g daemon off;
+message+    5103  0.0  0.3  11932  3052 ?        S    08:27   0:00 nginx: worker process
+root        5528  0.0  0.2   6944  2176 pts/1    S+   08:48   0:00 grep --color=auto -i nginx
+root@ip-172-31-88-178:/home/ubuntu# kill -9 5059
+root@ip-172-31-88-178:/home/ubuntu# ps -aux | grep -i nginx
+root        5572  0.0  0.2   6944  2176 pts/1    S+   08:50   0:00 grep --color=auto -i nginx
